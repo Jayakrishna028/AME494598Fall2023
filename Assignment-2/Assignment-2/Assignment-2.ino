@@ -13,7 +13,7 @@ void setup()
     ttgo->tft->fillScreen(TFT_WHITE);
     ttgo->tft->setTextColor(TFT_BLACK, TFT_WHITE);
     ttgo->tft->setTextFont(4);
-    ttgo->tft->drawString("JK",  120, 120);
+    ttgo->tft->drawString("JK",  110, 120);
 }
 
 void loop()
