@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<script src='asyncReq.js'></script>
+<script>
+function updateData()
+{
+  loadURL("./getData", function(data){
+    document.getElementById("results").innerHTML = data;
+  })
+}
+function start()
+{
+  setInterval("updateData()", 300);
+}
+</script>
+</head>
+<body onload='start()'>
+<h1> Temperature/Humidity</h1>
+<div id='results'> </div>
+
+<div id="turorial">
+
+  <div style="text-align: center;">
+    <img width = "800" src="Images/Screenshot from 2023-10-15 23-22-08.png">
+    <p><b>Step -1</b><br>Start a AWS Lab from Sandbox and login into AWS console</p>
+  </div>
+
+  <div style="text-align: center;">
+    <img width = "800" src="Images/Screenshot from 2023-10-15 23-25-36.png">
+    <p><b>Step - 2:</b><br>Create an EC2 instance with following settings:
+    <br><b>Name: Desired<br>Application or OS Image: Ubuntu  20.04<br> Configure Storage: 20GB
+    <br>key: No Key Required<br> Network Settings : Default</b><br>
+    With the above settings, Launch the Istance</p>
+  </div>
+
+  <div style="text-align: center;">
+    <img width = "800" src="Images/Screenshot from 2023-10-16 02-55-33.png"><br><br>
+    <img width = "800" src="Images/Screenshot from 2023-10-16 03-15-24.png">
+    <p> <b>Step - 3</b><br>Once the instance has Started and is running, Connect to the instance</p>
+  </div>
+
+  <div style="text-align: center;">
+    <img width = "800" src="Images/Screenshot from 2023-10-16 03-16-04.png">
+    <p><b>Step-4</b><br>If the instance is perfectly running, you should see a screen something like above.</p>
+  </div>
+
+  <div style="text-align: center;">
+    <p><b>Step-5</b><br>Install node and Mongodb into the server by using the following commands:<br>
+      curl -s https://gist.githubusercontent.com/tejaswigowda/f289e9bff13d152876e8d4b3281142f8/raw/df37df2e16a3166e686357a045751a7c18bbeebe/installNodeMongoUbuntu16.04.sh  | bash<br><br>
+    </p>
+  </div>
+
+  <div style="text-align: center;">
+    <img width="800" src="Images/Screenshot from 2023-10-16 03-38-30.png">
+    <p><b>Step -6 </b><br>Check whether the mongod server is running or not with the following command:<b>"sudo server mongod status"</b><br>
+    If the server is not inactive start the server using the following command: <b>"sudo server mongod start"</b><br>
+    Check for the status by using the same command above</p>
+  </div>
+
+  <div style = "text-align: center;">
+    <img width = "800" src = "Images/Screenshot3.png">
+    <p><b>Step -7 </b><br>start the server with the command<b> "node Filename.js"</b><br>Once the server starts running It should look like above</p>
+  </div>
+
+  <div style="text-align: center;"> 
+    <img width = "800" src="Images/Screenshot2.png">
+    <p><b>Step - 8</b><br> Upload the arduino sketches into the esp32 and connect the Humidity sensor the correct pin and url<br>
+    If the data is sent to the correct server then the output in the serial monitor should look similar to that in the image above</p>
+  </div>
+
+  <div style="text-align: center;">
+    <img width  = "800" src = "Images/Screenshot1.png">
+    <p> If we search for the URL with the correct port number we should see a webpage like this</p>
+  </div>
+
+</div>
+
+</body>
+</html>
